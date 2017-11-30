@@ -1,0 +1,18 @@
+
+  <div class="vistoggle" [ngClass]="{'open': expanded}" (click)="toggle()">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+  </div>
+  <div class="coolthing" [ngClass]="{'active': expanded}"></div>
+
+<div class="lawlist">
+
+  <div class="contentwrapper" [ngClass]="{'open': expanded}" #contentwrapper>
+    <div class="header">{{header}}</div>
+    <div class="entrywrapper">
+      <ng-content></ng-content>
+
+    </div>
+  </div>
+</div>

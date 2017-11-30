@@ -1,0 +1,39 @@
+@import "src/styles.scss";
+
+.wrapper {
+  color: white;
+  background-color: $color-light-gray;
+  border-radius: 0 15px 15px 15px;
+  overflow: hidden;
+  margin: 5px 0 5px 0;
+  .headerwrapper {
+    .header {
+      margin: 5px;
+    }
+  }
+  .spacer {
+    width: 150px;
+    margin-left: 5px;
+    border-top: 2px solid white;
+  }
+  .contentwrapper{
+
+    .content {
+      margin: 2px 5px 0 5px;
+      textarea {
+        width: calc(100% - 10px);
+        height: 100px;
+        min-height: 50px;
+        resize: vertical;
+        border: none;
+        color: white;
+        font-family: Roboto;
+        padding: 5px;
+        background-color: rgba(0,0,0,0);
+      }
+    }
+
+  }
+
+
+}

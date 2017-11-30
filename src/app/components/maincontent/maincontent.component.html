@@ -1,0 +1,12 @@
+<div class="headerwrapper">
+  <div class="header" [innerHTML]="header">
+  </div>
+  <div class="subheader" [innerHTML]="subheader"></div>
+</div>
+<div class="spacer"></div>
+<div class="content">
+  <div class="contentwrapper">
+    <ng-content></ng-content>
+    <div [innerHTML]="content"></div>
+  </div>
+</div>
