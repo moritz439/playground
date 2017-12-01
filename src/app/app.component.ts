@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {NavbarentryService} from "./services/navbarentry.service";
+import {Gesetzbuch} from "./interfaces";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  public navbarEntrys: Gesetzbuch[];
+
+  constructor(nes: NavbarentryService) {
+
+
+
+    nes.getEntries().subscribe(v => {
+      this.navbarEntrys = v;
+    });
+
+
+    //mocks
+    nes.addEntry({
+      name: 'Test',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33]
+    });
+    nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });
+    //mocks ende
+  }
+
 }

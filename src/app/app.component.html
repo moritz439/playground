@@ -2,22 +2,20 @@
 <app-navbar
 header="Elemente"
 >
+
+
   <app-navbarentry
-    header="Element 1"
+    *ngFor="let entry of navbarEntrys"
+    [header]="entry.name"
   >
   </app-navbarentry>
 
-  <app-navbarentry
-    header="Element 2"
-  >
-  </app-navbarentry>
-
-  <app-navbarentry
-    header="Element 3"
-  >
-  </app-navbarentry>
 
 </app-navbar>
 <app-popup></app-popup>
-<app-maincontent header="Maincontent1"
-[subheader]="'test, test'"></app-maincontent>
+<app-maincontent
+  *ngFor="let entry of navbarEntrys"
+  [header]="entry.name"
+[subheader]="entry.paragraphen"></app-maincontent>
+
+

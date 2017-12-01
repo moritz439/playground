@@ -1,0 +1,52 @@
+@import "src/styles.scss";
+
+
+.vistoggle{
+  cursor: pointer;
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  transform: rotate(0deg);
+  width: 60px;
+  height: 60px;
+
+  .linewrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translate(25%, calc(50% - 6px / 2 ));
+    .line1, .line2 {
+      position: absolute;
+      width: 30px;
+      height: 6px;
+      top: 0;
+      left: 0;
+      background-color: $color-button-element;
+    }
+    .line2 {
+      transform: rotate(90deg);
+    }
+  }
+
+}
+
+.coolthing{
+  transition: transform .3s, opacity .2s;
+  width: 200px;
+  height: 200px;
+  transform: rotate(45deg) translate(85%, 0%);
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+  opacity: .8;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+  &.active{
+    transform: rotate(90deg) translate(-120%, 0%);
+    opacity: 0 !important;
+
+  }
+}

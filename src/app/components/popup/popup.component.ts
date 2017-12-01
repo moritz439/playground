@@ -29,7 +29,7 @@ export class PopupComponent implements OnInit {
   }
 
   test() {
-    //toggle visibility
+    this.visibility =  'visible';
   }
 
 }

@@ -1,28 +1,16 @@
 import {Injectable} from '@angular/core';
-import {Subject} from "rxjs/Subject";
-import {Observable} from "rxjs/Observable";
-
-export interface Gesetzbuch {
-  name: string;
-  basisUrl: string;
-  paragraphen: number[];
-}
+import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
+import {Gesetzbuch} from '../interfaces';
 
 @Injectable()
 export class NavbarentryService {
 
-  private entryArray: Gesetzbuch[];
-  private entries: Subject<Gesetzbuch[]>;
+  private entryArray: Gesetzbuch[] = [];
+  private entries = new Subject<Gesetzbuch[]>();
 
 
-  constructor() {
-    //GB-Mocks
-    this.addEntry({
-      name: "Test",
-      basisUrl: "google.de",
-      paragraphen: [255, 33]
-    });
-  }
+  constructor() {}
 
   public addEntry(gb: Gesetzbuch) {
     this.entryArray.push(gb);
