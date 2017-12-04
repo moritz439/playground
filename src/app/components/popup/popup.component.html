@@ -1,12 +1,22 @@
 <div class="vistoggle" (click)="test()">
-  <div class="linewrapper">
+  <div class="linewrapper"
+       [ngClass]="{'active': (visibility !== 'visible')}"
+
+  >
     <div class="line1"></div>
     <div class="line2"></div>
   </div>
 
 </div>
-<div class="coolthing"></div>
+<div class="coolthing"
+     [ngClass]="{'active': (visibility !== 'visible')}"
+>
 
-<p [@visibility]="visibility" >
+</div>
+
+<div [@visibility]="visibility"
+
+class="fullscreenwrapper"
+>
   popup works!
-</p>
+</div>

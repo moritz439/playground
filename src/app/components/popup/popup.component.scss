@@ -27,6 +27,15 @@
     }
     .line2 {
       transform: rotate(90deg);
+      transition: transform .3s;
+    }
+    &.active {
+      .line2 {
+        transform: rotate(180deg);
+      }
+      .line1, .line2{
+        background-color: white;
+      }
     }
   }
 
@@ -40,13 +49,22 @@
   bottom: 0;
   right: 0;
   position: fixed;
-  z-index: 10;
+  z-index: 998;
   background-color: white;
   opacity: .8;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
   &.active{
-    transform: rotate(90deg) translate(-120%, 0%);
+    transform: rotate(90deg) translate(120%, 0%);
     opacity: 0 !important;
-
   }
+}
+
+.fullscreenwrapper{
+  z-index: 300;
+  background-color: $color-background-light;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
 }

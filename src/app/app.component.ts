@@ -12,12 +12,13 @@ export class AppComponent {
 
   public navbarEntrys: Gesetzbuch[];
 
-  constructor(nes: NavbarentryService) {
+  constructor(public nes: NavbarentryService) {
 
 
 
     nes.getEntries().subscribe(v => {
       this.navbarEntrys = v;
+      alert(JSON.stringify(v));
     });
 
 
@@ -33,6 +34,14 @@ export class AppComponent {
       paragraphen: [255, 33, 444]
     });
     //mocks ende
+  }
+
+  addEntry() {
+    this.nes.addEntry({
+      name: 'Tessst',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33]
+    });
   }
 
 }

@@ -8,10 +8,12 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   animations: [
     trigger('visibility', [
       state('visible', style({
-        opacity: 0
+        opacity: 0,
+        visibility: 'hidden'
       })),
       state('hidden', style({
-        opacity: 1
+        opacity: 1,
+        visibility: 'visible'
       })),
       transition('hidden => visible', animate('100ms')),
       transition('visible => hidden', animate('100ms')),
@@ -20,7 +22,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class PopupComponent implements OnInit {
 
-  public visibility = 'hidden';
+  public visibility = 'visible';
 
   constructor() {
   }
@@ -29,7 +31,7 @@ export class PopupComponent implements OnInit {
   }
 
   test() {
-    this.visibility =  'visible';
+    this.visibility = (this.visibility === 'hidden') ? 'visible' : 'hidden';
   }
 
 }

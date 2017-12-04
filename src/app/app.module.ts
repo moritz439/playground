@@ -9,6 +9,7 @@ import { MaincontentComponent } from './components/maincontent/maincontent.compo
 import { PopupComponent } from './components/popup/popup.component';
 import {ViewModelService} from "./services/view-model.service";
 import {NavbarentryService} from "./services/navbarentry.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {NavbarentryService} from "./services/navbarentry.service";
     PopupComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [ViewModelService, NavbarentryService],
   bootstrap: [AppComponent]
