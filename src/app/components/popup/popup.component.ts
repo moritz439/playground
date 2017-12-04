@@ -9,14 +9,16 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     trigger('visibility', [
       state('visible', style({
         opacity: 0,
-        visibility: 'hidden'
+        visibility: 'hidden',
+        transform: 'scale(1.1)'
       })),
       state('hidden', style({
         opacity: 1,
-        visibility: 'visible'
+        visibility: 'visible',
+        transform: 'scale(1)'
       })),
-      transition('hidden => visible', animate('100ms')),
-      transition('visible => hidden', animate('100ms')),
+      transition('hidden => visible', animate('200ms')),
+      transition('visible => hidden', animate('200ms')),
     ])
   ]
 })

@@ -18,7 +18,6 @@ export class AppComponent {
 
     nes.getEntries().subscribe(v => {
       this.navbarEntrys = v;
-      alert(JSON.stringify(v));
     });
 
 
