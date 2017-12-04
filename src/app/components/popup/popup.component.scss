@@ -18,6 +18,7 @@
     position: relative;
     transform: translate(25%, calc(50% - 6px / 2 ));
     .line1, .line2 {
+      transition: background-color .3s,  transform .3s;
       position: absolute;
       width: 30px;
       height: 6px;
@@ -27,7 +28,6 @@
     }
     .line2 {
       transform: rotate(90deg);
-      transition: transform .3s;
     }
     &.active {
       .line2 {
@@ -70,6 +70,7 @@
   top: 0;
   left: 0;
   position: fixed;
+  padding: 20px;
   .content{
     font-family: Roboto;
     color: white;

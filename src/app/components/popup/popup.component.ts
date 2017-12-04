@@ -10,7 +10,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
       state('visible', style({
         opacity: 0,
         visibility: 'hidden',
-        transform: 'scale(1.1)'
+        transform: 'scale(1.05)'
       })),
       state('hidden', style({
         opacity: 1,
@@ -25,6 +25,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 export class PopupComponent implements OnInit {
 
   public visibility = 'visible';
+
 
   constructor() {
   }

@@ -1,8 +1,8 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 <app-navbar
 header="Elemente"
+[inView]="!vms.viewModel.addURLOpen"
 >
-
 
   <app-navbarentry
     *ngFor="let entry of navbarEntrys"
@@ -13,6 +13,7 @@ header="Elemente"
 
 </app-navbar>
 <app-popup></app-popup>
+
 <app-maincontent
   *ngFor="let entry of navbarEntrys"
   [header]="entry.name"

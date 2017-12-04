@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {ViewModelService} from "../../services/view-model.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +11,10 @@ export class NavbarComponent implements OnInit {
   public expanded = false;
   @ViewChild('contentwrapper') contentwrapper;
   @Input() header: string;
+  @Input() inView: boolean;
 
-  constructor() {
+
+  constructor(vms: ViewModelService) {
   }
 
   ngOnInit() {
