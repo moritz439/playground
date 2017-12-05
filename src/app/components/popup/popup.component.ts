@@ -30,6 +30,7 @@ export class PopupComponent implements OnInit {
   @Input() inView = true;
   @ViewChild('url') urlfeld;
   @ViewChild('bezeichnung') bezeichnung;
+  @ViewChild('paragraphen') paragraphen;
 
 
   constructor(private vms: ViewModelService, private nes: NavbarentryService) {
@@ -52,23 +53,31 @@ export class PopupComponent implements OnInit {
   }
 
   cancel() {
-  this.test();
-  this.resetForm();
-  }
-
-  add() {
-    this.nes.addEntry({
-      name: this.bezeichnung.nativeElement.value,
-      basisUrl: this.urlfeld.nativeElement.value,
-      paragraphen: []
-    });
     this.test();
     this.resetForm();
   }
 
-  resetForm(){
+  add() {
+    const valName = this.bezeichnung.nativeElement;
+
+    const valURL = this.urlfeld.nativeElement;
+    const valPara = this.paragraphen.nativeElement.value.replace(/\s/g, '').split(',');
+    if ((valName.value && valURL.value) !== ('' && ' ')) {
+      this.nes.addEntry({
+        name: valName.value,
+        basisUrl: valURL.value,
+        paragraphen: valPara
+      });
+      this.test();
+      this.resetForm();
+    }
+
+  }
+
+  resetForm() {
     this.bezeichnung.nativeElement.value = '';
     this.urlfeld.nativeElement.value = '';
+    this.paragraphen.nativeElement.value = '';
   }
 
 }
