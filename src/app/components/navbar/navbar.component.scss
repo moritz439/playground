@@ -7,9 +7,10 @@ $lawlist-width: 300px;
   position: fixed;
   top: 0;
   left: 0;
+  transition: opacity .3s, transform .3s;
+  opacity: 1;
 
   &:not(.inView){
-
     opacity: 0;
   }
 }

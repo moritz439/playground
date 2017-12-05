@@ -1,22 +1,28 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<app-popup></app-popup>
+
+<app-main-view
+[blur]="vms.viewModel.addURLOpen"
+>
+
+  <app-maincontent
+    *ngFor="let entry of navbarEntrys"
+    [header]="entry.name"
+    [subheader]="entry.paragraphen"></app-maincontent>
+
+</app-main-view>
 <app-navbar
-header="Elemente"
-[inView]="!vms.viewModel.addURLOpen"
+  header="Elemente"
+  [inView]="!vms.viewModel.addURLOpen"
 >
 
   <app-navbarentry
     *ngFor="let entry of navbarEntrys"
     [header]="entry.name"
-  >
-  </app-navbarentry>
-
+  ></app-navbarentry>
 
 </app-navbar>
-<app-popup></app-popup>
-{{vms.viewModel.addURLOpen}}
-<app-maincontent
-  *ngFor="let entry of navbarEntrys"
-  [header]="entry.name"
-[subheader]="entry.paragraphen"></app-maincontent>
-<div (click)="addEntry()">TEST</div>
+
 
