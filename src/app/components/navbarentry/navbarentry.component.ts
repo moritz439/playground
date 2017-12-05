@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -13,14 +13,15 @@ export class NavbarentryComponent implements OnInit {
   @Input() paragraphen;
   public paratext: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
 
-  toggle(): void{
-  this.open = !this.open;
+  toggle(): void {
+    this.open = !this.open;
   }
 
 
