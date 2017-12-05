@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {ViewModelService} from "../../services/view-model.service";
 
 @Component({
   selector: 'app-popup',
@@ -7,12 +8,12 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   styleUrls: ['./popup.component.scss'],
   animations: [
     trigger('visibility', [
-      state('visible', style({
+      state('hidden', style({
         opacity: 0,
         visibility: 'hidden',
         transform: 'scale(1.05)'
       })),
-      state('hidden', style({
+      state('visible', style({
         opacity: 1,
         visibility: 'visible',
         transform: 'scale(1)'
@@ -24,17 +25,25 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 })
 export class PopupComponent implements OnInit {
 
-  public visibility = 'visible';
+  public visibility = 'hidden';
+  @Input() inView = true;
 
-
-  constructor() {
+  constructor(private vms: ViewModelService) {
   }
 
   ngOnInit() {
   }
 
   test() {
-    this.visibility = (this.visibility === 'hidden') ? 'visible' : 'hidden';
+    if (this.visibility === 'hidden') {
+      this.visibility = 'visible';
+      this.vms.viewModel.addURLOpen = true;
+
+    } else {
+
+      this.visibility = 'hidden';
+      this.vms.viewModel.addURLOpen = false;
+    }
   }
 
 }

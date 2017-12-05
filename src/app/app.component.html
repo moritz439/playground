@@ -13,7 +13,7 @@ header="Elemente"
 
 </app-navbar>
 <app-popup></app-popup>
-
+{{vms.viewModel.addURLOpen}}
 <app-maincontent
   *ngFor="let entry of navbarEntrys"
   [header]="entry.name"

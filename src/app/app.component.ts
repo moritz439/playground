@@ -33,6 +33,8 @@ export class AppComponent {
       paragraphen: [255, 33, 444]
     });
     //mocks ende
+    vms.viewModel.addURLOpen = false;
+    vms.viewModel.navbarOpen = false;
   }
 
   addEntry() {

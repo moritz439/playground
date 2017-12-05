@@ -10,7 +10,7 @@ export class NavbarentryComponent implements OnInit {
 
   public open = false;
   @Input() header: string;
-  private paratext: string;
+  public paratext: string;
 
   constructor() { }
 

@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   public expanded = false;
   @ViewChild('contentwrapper') contentwrapper;
   @Input() header: string;
-  @Input() inView: boolean;
+  @Input() inView: true;
 
 
   constructor(vms: ViewModelService) {

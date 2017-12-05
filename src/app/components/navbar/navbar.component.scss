@@ -3,10 +3,17 @@
 
 $lawlist-width: 300px;
 
-.wrapeverything.inView{
-//transform: translate(-100px, -100px);
+.wrapeverything{
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  &:not(.inView){
+
+    opacity: 0;
+  }
 }
+
 
 .vistoggle {
   transition: transform .3s;
