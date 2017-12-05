@@ -44,9 +44,7 @@ export class PopupComponent implements OnInit {
     if (this.visibility === 'hidden') {
       this.visibility = 'visible';
       this.vms.viewModel.addURLOpen = true;
-
     } else {
-
       this.visibility = 'hidden';
       this.vms.viewModel.addURLOpen = false;
     }
@@ -59,10 +57,10 @@ export class PopupComponent implements OnInit {
 
   add() {
     const valName = this.bezeichnung.nativeElement;
-
     const valURL = this.urlfeld.nativeElement;
     const valPara = this.paragraphen.nativeElement.value.replace(/\s/g, '').split(',');
-    if ((valName.value && valURL.value) !== ('' && ' ')) {
+
+    if ((valName.value.replace(/\s/g, '') && valURL.value.replace(/\s/g, '')) !== ('' && ' ')) {
       this.nes.addEntry({
         name: valName.value,
         basisUrl: valURL.value,
@@ -71,7 +69,6 @@ export class PopupComponent implements OnInit {
       this.test();
       this.resetForm();
     }
-
   }
 
   resetForm() {

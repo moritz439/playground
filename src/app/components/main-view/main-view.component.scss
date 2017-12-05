@@ -1,0 +1,13 @@
+.wrapper.blurred{
+
+  filter: blur(10px);
+}
+.wrapper{
+  position: fixed;
+  width: 100vw;
+  transition: filter .3s;
+  filter: blur(0px);
+margin: -8px;           //TODO: remove, dieser hack eentfernt das margin des DOM-Knoten 'html'
+  z-index: 0;
+}
+

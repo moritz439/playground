@@ -31,6 +31,34 @@ export class AppComponent {
       name: 'Test1',
       basisUrl: 'google.de',
       paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
+    });  nes.addEntry({
+      name: 'Test1',
+      basisUrl: 'google.de',
+      paragraphen: [255, 33, 444]
     });
     //mocks ende
     vms.viewModel.addURLOpen = false;

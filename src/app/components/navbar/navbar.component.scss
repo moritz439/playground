@@ -87,7 +87,7 @@ $lawlist-width: 300px;
     }
 
     .header {
-      height: 25px;
+      height: 30px;
       padding: 15px 10px 10px 10px;
       font-size: 1.1em;
       text-align: center;
@@ -95,6 +95,15 @@ $lawlist-width: 300px;
 
     .entrywrapper{
       padding: 5px;
+      height: calc(100% - 40px - 25px);
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $color-background-light-transparent;
+      }
+
     }
   }
 }
