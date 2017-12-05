@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ViewModelService} from "../../services/view-model.service";
+import {NavbarentryService} from "../../services/navbarentry.service";
 
 @Component({
   selector: 'app-popup',
@@ -27,8 +28,12 @@ export class PopupComponent implements OnInit {
 
   public visibility = 'hidden';
   @Input() inView = true;
+  @ViewChild('url') urlfeld;
+  @ViewChild('bezeichnung') bezeichnung;
 
-  constructor(private vms: ViewModelService) {
+
+  constructor(private vms: ViewModelService, private nes: NavbarentryService) {
+
   }
 
   ngOnInit() {
@@ -45,13 +50,25 @@ export class PopupComponent implements OnInit {
       this.vms.viewModel.addURLOpen = false;
     }
   }
+
   cancel() {
-    this.visibility = 'hidden';
-    this.vms.viewModel.addURLOpen = false;
+  this.test();
+  this.resetForm();
   }
 
   add() {
+    this.nes.addEntry({
+      name: this.bezeichnung.nativeElement.value,
+      basisUrl: this.urlfeld.nativeElement.value,
+      paragraphen: []
+    });
+    this.test();
+    this.resetForm();
+  }
 
+  resetForm(){
+    this.bezeichnung.nativeElement.value = '';
+    this.urlfeld.nativeElement.value = '';
   }
 
 }
