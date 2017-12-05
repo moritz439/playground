@@ -45,5 +45,13 @@ export class PopupComponent implements OnInit {
       this.vms.viewModel.addURLOpen = false;
     }
   }
+  cancel() {
+    this.visibility = 'hidden';
+    this.vms.viewModel.addURLOpen = false;
+  }
+
+  add() {
+
+  }
 
 }

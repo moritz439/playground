@@ -15,12 +15,30 @@
 </div>
 
 <div [@visibility]="visibility"
-class="fullscreenwrapper"
+     class="fullscreenwrapper"
 >
   <div class="content">
 
+    <div class="form">
+
+      <div class="formelem">
+        <input type="text" name="bezeichnung">
+      </div>
+
+      <div class="formelem">
+        <input type="text" name="urlText">
+      </div>
+
+      <div class="formelem buttons">
+        <div class="discard" (click)="cancel()">Abbrechen</div>
+        <div class="add" (click)="add()">Hinzufügen</div>
+      </div>
 
 
-    dfsidfvjsbdögoivsdüpcvgd
+    </div>
+
+
   </div>
+
+
 </div>

@@ -12,17 +12,22 @@
     [header]="entry.name"
     [subheader]="entry.paragraphen"></app-maincontent>
 
+
+
+  <app-navbar
+    header="Elemente"
+  >
+
+    <app-navbarentry
+      *ngFor="let entry of navbarEntrys"
+      [header]="entry.name"
+    ></app-navbarentry>
+
+  </app-navbar>
+
+
+
 </app-main-view>
-<app-navbar
-  header="Elemente"
-  [inView]="!vms.viewModel.addURLOpen"
->
 
-  <app-navbarentry
-    *ngFor="let entry of navbarEntrys"
-    [header]="entry.name"
-  ></app-navbarentry>
-
-</app-navbar>
 
 

@@ -10,7 +10,7 @@ $lawlist-width: 300px;
   transition: opacity .3s, transform .3s;
   opacity: 1;
 
-  &:not(.inView){
+  &.outView{
     opacity: 0;
   }
 }
@@ -74,7 +74,7 @@ $lawlist-width: 300px;
   .contentwrapper {
     transition: transform .3s;
     background-color: $color-background-light;
-    box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.65);
 
     width: $lawlist-width;
     position: fixed;
