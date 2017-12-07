@@ -11,6 +11,7 @@ import {ViewModelService} from "./services/view-model.service";
 import {NavbarentryService} from "./services/navbarentry.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MainViewComponent } from './components/main-view/main-view.component';
+import { EntrywebcontentComponent } from './components/entrywebcontent/entrywebcontent.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MainViewComponent } from './components/main-view/main-view.component';
     NavbarentryComponent,
     MaincontentComponent,
     PopupComponent,
-    MainViewComponent
+    MainViewComponent,
+    EntrywebcontentComponent
   ],
   imports: [
     BrowserModule,

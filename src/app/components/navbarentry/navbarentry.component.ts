@@ -14,11 +14,13 @@ export class NavbarentryComponent implements OnInit {
   @Input() paragraphen: number[];
   @ViewChild('textfield') textfield;
   public paratext: string;
+  public initparas;
 
   constructor(public nes: NavbarentryService) {
   }
 
   ngOnInit() {
+    this.initparas = this.paragraphen;
   }
 
   toggle(): void {
@@ -28,22 +30,14 @@ export class NavbarentryComponent implements OnInit {
   updateparas() {
     console.log('--------');
     let textfeld = new Set(this.nes.getParaArrayFromString(this.textfield.nativeElement.value));
-    let nepara = new Set(this.paragraphen);
 
     let newparas: number[] = [];
 
     textfeld.forEach(v => {
-      //console.log(nepara, ' hat:' +  v + ' ' + nepara.has(Number.parseInt(v)));
       newparas.push(v);
     });
 
-
-
-
-
-
-
-     this.nes.updateEntry(this.header, newparas);
+    this.nes.updateEntry(this.header, newparas);
 
   }
 

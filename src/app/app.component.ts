@@ -23,43 +23,27 @@ export class AppComponent {
 
     //mocks
     nes.addEntry({
-      name: 'Test',
+      name: 'Test1',
       basisUrl: 'google.de',
       paragraphen: [255, 33]
     });
     nes.addEntry({
-      name: 'Test1',
+      name: 'Test2',
       basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
-    });  nes.addEntry({
-      name: 'Test1',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33, 444]
+      paragraphen: [85, 3, 22]
     });
+    nes.addEntry({
+      name: 'Test3',
+      basisUrl: 'google.de',
+      paragraphen: [5, 334, 84]
+    });
+    nes.addEntry({
+      name: 'Test4',
+      basisUrl: 'google.de',
+      paragraphen: [11, 22, 333]
+    });
+
+
     //mocks ende
     vms.viewModel.addURLOpen = false;
     vms.viewModel.navbarOpen = false;

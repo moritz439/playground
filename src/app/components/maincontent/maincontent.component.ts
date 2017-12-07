@@ -7,12 +7,20 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MaincontentComponent implements OnInit {
 
+  private _subheader;
+
   @Input() header: string;
-  @Input() subheader: string;
+
+  @Input()
+  set subheader(v) {
+    this._subheader = v.toString().replace(/,/g, ', ');
+  }
+
   @Input() content: string;
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
