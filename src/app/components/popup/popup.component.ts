@@ -58,7 +58,7 @@ export class PopupComponent implements OnInit {
   add() {
     const valName = this.bezeichnung.nativeElement;
     const valURL = this.urlfeld.nativeElement;
-    const valPara = this.paragraphen.nativeElement.value.replace(/\s/g, '').split(',');
+    const valPara = this.nes.getParaArrayFromString(this.paragraphen.nativeElement.value);
 
     if ((valName.value.replace(/\s/g, '') && valURL.value.replace(/\s/g, '')) !== ('' && ' ')) {
       this.nes.addEntry({

@@ -9,8 +9,8 @@ export class NavbarentryService {
   private entryArray: Gesetzbuch[] = [];
   private entries = new Subject<Gesetzbuch[]>();
 
-
-  constructor() {}
+  constructor() {
+  }
 
   public addEntry(gb: Gesetzbuch) {
     this.entryArray.push(gb);
@@ -19,6 +19,22 @@ export class NavbarentryService {
 
   public getEntries(): Observable<Gesetzbuch[]> {
     return this.entries.asObservable();
+  }
+
+  public updateEntry(name: string, paragraph: number[]) {
+    //just replace
+    this.entryArray.forEach(v => {
+      if (v.name === name) { v.paragraphen = paragraph; }
+    });
+    this.entries.next(this.entryArray);
+
+    //add schnittmenge
+    /*this.entryArray[name].paragraphen.push(paragraph);
+    this.entries.next(this.entryArray);*/
+  }
+
+  public getParaArrayFromString(input: string): any[] {
+    return input.replace(/\s/g, '').split(',');
   }
 
 }

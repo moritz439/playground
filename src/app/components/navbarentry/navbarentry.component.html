@@ -8,7 +8,7 @@
   <div class="contentwrapper">
 
     <div class="content">
-      <textarea [(value)]="paragraphen"></textarea>
+      <textarea [value]="paragraphen" #textfield (input)="updateparas()"></textarea>
 
     </div>
 
