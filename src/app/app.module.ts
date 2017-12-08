@@ -12,6 +12,7 @@ import {NavbarentryService} from "./services/navbarentry.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { EntrywebcontentComponent } from './components/entrywebcontent/entrywebcontent.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EntrywebcontentComponent } from './components/entrywebcontent/entrywebc
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [ViewModelService, NavbarentryService],
   bootstrap: [AppComponent]

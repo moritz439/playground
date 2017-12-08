@@ -1,5 +1,4 @@
 import {AfterContentChecked, Component, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {FormsModule} from "@angular/forms";
 import {NavbarentryService} from "../../services/navbarentry.service";
 
 @Component({
@@ -23,7 +22,6 @@ export class NavbarentryComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked() {
-
   }
 
   toggle(): void {
@@ -33,7 +31,6 @@ export class NavbarentryComponent implements OnInit, AfterContentChecked {
   updateparas() {
     let textfeld = new Set(this.nes.getParaArrayFromString(this.textfield.nativeElement.value));
     let newparas: number[] = [];
-
     textfeld.forEach(v => {
       if (v) { newparas.push(v); }
     });

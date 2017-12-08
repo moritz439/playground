@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {NavbarentryService} from "./services/navbarentry.service";
 import {Gesetzbuch} from "./interfaces";
 import {ViewModelService} from "./services/view-model.service";
-import {getRandomString} from "selenium-webdriver/safari";
 
 @Component({
   selector: 'app-root',
@@ -14,8 +13,10 @@ export class AppComponent {
 
   public navbarEntrys: Gesetzbuch[];
 
+
   constructor(public nes: NavbarentryService,
               public vms: ViewModelService) {
+nes.getWebsite();
 
     nes.getEntries().subscribe(v => {
       this.navbarEntrys = v;
@@ -43,18 +44,7 @@ export class AppComponent {
       paragraphen: [11, 22, 333]
     });
 
-
-    //mocks ende
     vms.viewModel.addURLOpen = false;
     vms.viewModel.navbarOpen = false;
   }
-
-  addEntry() {
-    this.nes.addEntry({
-      name: 'Tessst',
-      basisUrl: 'google.de',
-      paragraphen: [255, 33]
-    });
-  }
-
 }

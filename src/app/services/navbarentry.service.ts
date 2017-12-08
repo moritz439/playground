@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {Gesetzbuch} from '../interfaces';
+import {HttpClient} from "@angular/common/http";
+import {yql} from 'yql';
 
 @Injectable()
 export class NavbarentryService {
@@ -9,7 +11,7 @@ export class NavbarentryService {
   private entryArray: Gesetzbuch[] = [];
   private entries = new Subject<Gesetzbuch[]>();
 
-  constructor() {
+  constructor(public http: HttpClient) {
   }
 
   public addEntry(gb: Gesetzbuch) {
@@ -22,9 +24,10 @@ export class NavbarentryService {
   }
 
   public updateEntry(name: string, paragraph: number[]) {
-    //just replace
     this.entryArray.forEach(v => {
-      if (v.name === name) { v.paragraphen = paragraph; }
+      if (v.name === name) {
+        v.paragraphen = paragraph;
+      }
     });
     this.entries.next(this.entryArray);
 
@@ -35,6 +38,17 @@ export class NavbarentryService {
 
   public getParaArrayFromString(input: string): any[] {
     return input.replace(/\s/g, '').split(',');
+  }
+
+  public getWebsite() {
+    this.http.get("http://bundestag.github.io/gesetze/", {responseType: 'text'})
+      .subscribe(
+        data => {
+          alert(data);
+        },
+          err => {
+          alert(':(');
+    });
   }
 
 }
