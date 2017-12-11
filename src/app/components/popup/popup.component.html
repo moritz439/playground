@@ -40,12 +40,19 @@
         >
       </div>
       <div class="formelem">
-        <input
+        <select
           #paragraphen
-          type="text"
           name="paragraphen"
-          placeholder="Paragraphen (optional)"
         >
+          <option
+          *ngFor="let book of nes.lawbooks"
+          >
+          {{book}}
+          </option>
+
+
+
+        </select>
       </div>
 
       <div class="formelem buttons">

@@ -1,22 +1,26 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
-
 <app-popup></app-popup>
 
 <app-main-view
-[blur]="vms.viewModel.addURLOpen"
+  [blur]="vms.viewModel.addURLOpen"
 >
 
   <app-maincontent
     *ngFor="let entry of navbarEntrys"
     [header]="entry.name"
-    [subheader]="entry.paragraphen"></app-maincontent>
+    [subheader]="entry.paragraphen">
 
+    <app-entrywebcontent
+      *ngFor="let paragraph of entry.paragraphen"
+      [content]="paragraph"
+    ></app-entrywebcontent>
+
+  </app-maincontent>
 
 
   <app-navbar
-    header="Elemente"
-  >
+    header="Elemente">
 
     <app-navbarentry
       *ngFor="let entry of navbarEntrys"

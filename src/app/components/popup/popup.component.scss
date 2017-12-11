@@ -86,7 +86,7 @@
 
 .formelem{
 
-  input, .add, .discard{
+  input, .add, .discard, select{
     margin-top: 5px;
     margin-bottom: 5px;
     border: none;
@@ -97,7 +97,7 @@
       height: 40px;
 
   }
-  input{
+  input, select{
     width: 100%;
     padding-left: 5px;
   }
